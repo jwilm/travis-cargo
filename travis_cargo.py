@@ -1,10 +1,9 @@
 from __future__ import print_function
 import argparse
 import os, sys, subprocess, json, re
-import process
 
 def run(*args):
-    ret = subprocess.call(args,  stdout=process.stdout, stderr=process.stderr)
+    ret = subprocess.call(args,  stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if ret != 0:
         exit(ret)
 
